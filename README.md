@@ -1,4 +1,10 @@
-Working on the second step...
+This repo contains my work following the [Javascript 30](https://javascript30.com/) course by Wes Bos.
+
+An exercise in complete variety of mini tasks/projects in pure vanilla Javascript.
+
+My goal is to spend spending 30mins - 1hr each day for the next 30 days.
+
+Don't forget the second step...
 
 > The first step is learning how to do it. Finding and obtaining the insight and the tools and the techniques you need. Understanding how it works.
 
