@@ -70,7 +70,6 @@
   }
 
   function removeTransition(e) {
-    console.log(e.propertyName);
     if (e.propertyName !== 'transform') { // skip if not transform.... why?
       this.classList.remove('playing');
     }
