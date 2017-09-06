@@ -18,7 +18,7 @@ _(Array.prototype.map())[https://developer.mozilla.org/en-US/docs/Web/JavaScript
 _(Array.prototype.sort())[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort]_ is a method used on an array that sorts the array in place with the provided function.
 
 syntax:
-`arr.sort()` - this sorts by unicode order
+`arr.sort()` - this sorts by unicode code point order
 or
 `arr.sort(compareFunc)` - this sorts by compareFunc
 
@@ -31,7 +31,16 @@ syntax:
 Interesting to note that javascript ternery operator syntax is quite similar to ruby's
 
 ## `reduce`
-_(Array.prototype.reduce())[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce?v=b]_ is a method used on an array
+_(Array.prototype.reduce())[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce?v=b]_ is a method that applies a function against and accumulator and each item of an array from left to right to reduce it to a single value
+
+syntax:
+`arr.reduce(callback[, initialValue])`
+
+```
+arr.reduce(function(accumulator, currentValue){
+  ...
+}, initialValue)
+```
 
 ## Converting a NodeList to an Array
 - using `Array.from(nodeList)`

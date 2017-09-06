@@ -100,28 +100,42 @@
 
     // option A
 
-    lists = document.querySelectorAll('.mw-category-group li')
-    boulevards = []
-    lists.forEach(list => boulevards.push(list.innerText));
+    // lists = document.querySelectorAll('.mw-category-group li')
+    // boulevards = []
+    // lists.forEach(list => boulevards.push(list.innerText));
 
-    boulevards_with_de = boulevards.filter(boulevard => boulevard.includes('de'));
-    console.log(boulevards_with_de);
+    // boulevards_with_de = boulevards.filter(boulevard => boulevard.includes('de'));
+    // console.log(boulevards_with_de);
 
-    // option B -convert nodeList to array
-    links = Array.from(document.querySelectorAll('.mw-category-group li a'));
-    de = links
-            .map(link => link.textContent)
-            .filter(boulevard => boulevard.includes('de'));
-    console.log(de);
-
+    // // option B -convert nodeList to array
+    // links = Array.from(document.querySelectorAll('.mw-category-group li a'));
+    // de = links
+    //         .map(link => link.textContent)
+    //         .filter(boulevard => boulevard.includes('de'));
+    // console.log(de);
 
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    function lastName(string){
+      return string.split(', ')[1];
+    }
+    alphaSort = people.sort((a, b) => lastName(a) > lastName(b) ? 1 : -1);
+    console.log(alphaSort);
+
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+    transportation = data.reduce(function(obj, item){
+      if (!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+    }, {});
+    console.log(transportation);
 
   </script>
 </body>
