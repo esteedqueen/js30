@@ -68,6 +68,7 @@ const more_buttons = ["back", "help", "forward"];
 
 buttons.push(more_buttons); // ["go", "next", ["back", "help", "forward"]]
 buttons.push(...more_buttons); // ["go", "next", "back", "help", "forward"]
+```
 
 ## `RegExp`
 
