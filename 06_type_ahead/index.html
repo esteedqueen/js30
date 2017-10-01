@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+cities = [];
+
+fetch(endpoint)
+  .then(blob => blob.json()
+  .then(data => cities.push(...data)));
+
+function search(searchString, cities) {
+  return cities.filter(place => {
+    const regex = new RegExp(searchString, 'gi');
+    return place.city.match(regex) || place.state.match(regex);
+  });
+}
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function displaySearchResults() {
+  const searchResults = search(this.value, cities);
+
+  const resultsHTML = searchResults.map( place => {
+    const regex = new RegExp(this.value, 'gi');
+    const city = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+    const state = place.state.replace(regex, `<span class="hl">${this.value}</span>`);    
+    return `
+      <li>
+        <span class="name">${city}, ${state}</span>
+        <span class="population">${numberWithCommas(place.population)}</span>
+      </li>
+
+    `;
+  }).join("");
+  searchSuggestions.innerHTML = resultsHTML;
+}
+
+const searchInput = document.querySelector('.search');
+const searchSuggestions = document.querySelector('.suggestions');
+
+searchInput.addEventListener('change', displaySearchResults); // displays only when out of the input area box
+searchInput.addEventListener('keyup', displaySearchResults); // displays when the user releases a key on the keyboard
+
+
+
+</script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 This repo contains my work following the [Javascript 30](https://javascript30.com/) course by Wes Bos.
 
-An exercise in complete variety of mini tasks/projects in pure vanilla Javascript.
+An exercise in complete variety of mini tasks/projects in pure vanilla Javascript ES6.
 
 My goal is to spend spending 30mins - 1hr each day for the next 30 days.
 
