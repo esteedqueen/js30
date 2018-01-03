@@ -51,6 +51,13 @@
     comments.splice(index, 1)
     console.table(comments)
 
+    // or using slice - caveats; the code below seems to only work if you already know the position where the item you want to delete is - changing the id of the comment you want to delete the code below will not return the right array... so slice might not be a reliable method for deleting an item from an array
+    const newComments = [
+      ...comments.slice(0, index),
+      ...comments.slice(index + 1)
+    ]
+    console.log(newComments)
+
   </script>
 </body>
 </html>

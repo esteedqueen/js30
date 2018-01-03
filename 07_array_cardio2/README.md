@@ -28,3 +28,20 @@ This returns the first element that matches the condition/function implemented. 
 ```
 arr.find(callback[arg])
 ```
+
+## [Array.prototype.findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+
+This returns the position/index of the first element that matches the condition/function implemented. It returns the index value if found and `undefined` if no match found
+
+```
+arr.findIndex(callback[arg])
+```
+
+## [Array.prototype.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+
+This returns a copy of an array into a new array using the `begin` or/and `end` index/position args provided without including the element at the `end` index. This doesn't modify the original array
+
+```
+arr.slice(begin[, end])
+```
+
